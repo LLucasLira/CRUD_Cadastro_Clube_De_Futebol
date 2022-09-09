@@ -1,0 +1,182 @@
+//ADD TÉCNICO
+Create procedure [dbo].[AddNweTecnico]  
+(  
+    @qtdTitulos int,
+	@qtdTimes int,
+	@estrategia varchar(10),
+	@nome varchar(50),
+	@time varchar(50),
+	@idade int 
+)  
+as  
+begin  
+   Insert into tTecnico values(@qtdTitulos, @qtdTimes, @estrategia, @nome, @time, @idade) 
+End
+
+#####################################################################################################################################################
+//ADD GANDULA
+Create procedure [dbo].[pAddNweGandula]  
+(  
+    @jogosTrabalhados int,
+	@jogosVencidos int,
+	@peQuenteFrio varchar(10),
+
+	@nome varchar(50),
+	@time varchar(50),
+	@idade int 
+)  
+as  
+begin  
+   Insert into tGandula values(@jogosTrabalhados, @jogosVencidos, @peQuenteFrio, @nome, @time, @idade) 
+End
+
+#####################################################################################################################################################
+//ADD JOGADOR
+Create procedure [dbo].[pAddNweJogador]  
+(  
+  @posicao varchar(25),
+	@numeroCamisa int,
+	@golsMarcados int,
+	@nome varchar(50),
+	@time varchar(50),
+	@idade int 
+)  
+as  
+begin  
+   Insert into tJogador values(@posicao, @numeroCamisa, @golsMarcados, @nome, @time, @idade) 
+End
+
+#####################################################################################################################################################
+//DELETE GANDULA
+create procedure[dbo].[pDeleteGandula]
+(
+    @Id int
+
+)
+as
+begin
+    Delete from tGandula where Id=@Id
+End
+
+#####################################################################################################################################################
+//DELETE JOGADOR
+create procedure[dbo].[pDeleteJogador]
+(
+    @Id int
+
+)
+as
+begin
+    Delete from tJogador where Id=@Id
+End
+
+#####################################################################################################################################################
+//DELETE TÉCNICO
+create procedure[dbo].[pDeleteTecnico]
+(
+    @Id int
+
+)
+as
+begin
+    Delete from tTecnico where Id=@Id
+End
+
+#####################################################################################################################################################
+//SELECT GANDULA
+Create procedure [dbo].[pGetGandula]
+as
+Begin
+    select *from tGandula
+End
+
+#####################################################################################################################################################
+//SELECT JOGADOR
+Create procedure [dbo].[pGetJogador]
+as
+Begin
+    select *from tJogador
+End
+
+#####################################################################################################################################################
+//SELECT TÉCNICO
+Create procedure [dbo].[pGetTecnico]
+as
+Begin
+    select *from tTecnico
+End
+
+#####################################################################################################################################################
+//UPDATE GANDULA
+CREATE procedure[dbo].[pUpdateGandula]
+(
+   @Id int,
+   @jogosTrabalhados int,  
+   @jogosVencidos int,  
+   @peQuenteFrio varchar (10),  
+   @nome varchar (50), 
+   @time varchar (50),
+   @idade varchar (50) 
+)
+as
+begin 
+    Update tGandula
+    set 
+     jogosTrabalhados = @jogosTrabalhados,
+     jogosVencidos = @jogosVencidos,
+     peQuenteFrio = @peQuenteFrio,
+     nome = @nome,
+     time = @time,
+     idade =@idade 
+    Where Id=@Id
+end
+
+#####################################################################################################################################################
+//UPDATE JOGADOR
+create procedure[dbo].[pUpdateJogador]
+(
+   @Id int,
+   @posicao varchar (50),  
+   @numeroCamisa int,  
+   @golsMarcados int,
+   @nome varchar (50), 
+   @time varchar (50),
+   @idade varchar (50) 
+)
+as
+begin 
+    Update tJogador
+    set 
+     posicao = @posicao,
+     numeroCamisa = @numeroCamisa,
+     golsMarcados = @golsMarcados,
+     nome = @nome,
+     time = @time,
+     idade =@idade 
+    Where Id=@Id
+end
+
+#####################################################################################################################################################
+//UPDATE TÉCNICO
+create procedure[dbo].[pUpdateTecnico]
+(
+   @Id int,
+   @qtdTitulos int,  
+   @qtdTimes int,  
+   @estrategia varchar (10),
+   @nome varchar (50), 
+   @time varchar (50),
+   @idade varchar (50) 
+)
+as
+begin 
+    Update tTecnico
+    set 
+     qtdTitulos = @qtdTitulos,
+     qtdTimes = @qtdTimes,
+     estrategia = @estrategia,
+     nome = @nome,
+     time = @time,
+     idade =@idade 
+    Where Id=@Id
+end
