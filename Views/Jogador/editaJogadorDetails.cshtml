@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "editaJogadorDetails";
+}
+
+@model CADASTRO_DE_CLUBE_DE_FUTEBOL.Models.clsJogador
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <DOCTYPE html>
+        <head>
+            <title>Formulário Jogador</title>
+        </head>
+        <body>
+
+            <h2>Edita Jogador</h2>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="color:green">
+                    @ViewBag.Message
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.posicao, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(Model => Model.posicao, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.posicao, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.numeroCamisa, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(Model => Model.numeroCamisa, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.numeroCamisa, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.golsMarcados, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(Model => Model.golsMarcados, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.golsMarcados, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.nome, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div>
+                    @Html.EditorFor(Model => Model.nome, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.nome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.time, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div>
+                    @Html.EditorFor(Model => Model.time, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.time, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.idade, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div>
+                    @Html.EditorFor(Model => Model.idade, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.idade, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <br />
+            <a href="~/Jogador/getAllJogadorDetails" class="btn btn-danger">Voltar</a>
+            <input type="submit" class="btn btn-warning" value="Alterar Jogador" />
+
+        </body>
+    </DOCTYPE>
+}

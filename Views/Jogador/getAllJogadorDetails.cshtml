@@ -1,0 +1,80 @@
+﻿@using CADASTRO_DE_CLUBE_DE_FUTEBOL.Controllers;
+<DOCTYPE html>
+    <head>
+        <title>Detalhe de Jogador</title>
+    </head>
+    <body>
+
+        <h2>Detalhe de Jogador</h2>
+
+        <div class="col-md-offset-2 col-md-10" style="color:green">
+            @ViewBag.AlertMessage
+        </div>
+
+        <table class="table">
+            <tr>
+                <th></th>
+                <th scope="col">
+                    Id
+                </th>
+                <th scope="col">
+                    Posição
+                </th>
+                <th scope="col">
+                    Número da camisa
+                </th>
+                <th scope="col">
+                    Gols Marcados
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Time
+                </th>
+                <th scope="col">
+                    Idade
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink("Deletar", "deleteJogador", new { Id = item.Id })
+                        @Html.ActionLink("Alterar", "editaJogadorDetails", new { id = item.Id })
+                    </td>
+                    <td>
+                        @Html.Encode(item.Id)
+                    </td>
+                    <td>
+                        @Html.Encode(item.posicao)
+                    </td>
+                    <td>
+                        @Html.Encode(item.numeroCamisa)
+                    </td>
+                    <td>
+                        @Html.Encode(item.golsMarcados)
+                    </td>
+                    <td>
+                        @Html.Encode(item.nome)
+                    </td>
+                    <td>
+                        @Html.Encode(item.time)
+                    </td>
+                    <td>
+                        @Html.Encode(item.idade)
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div>
+            <a href="~/Home/Index" class="btn btn-danger">Voltar</a>
+        </div>
+
+    </body>
+</DOCTYPE>
+
+
+
+

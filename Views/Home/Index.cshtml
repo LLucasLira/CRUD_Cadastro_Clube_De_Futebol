@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<DOCTYPE html>
+    <head>
+        <title>Home</title>
+        <link href="~/Estilo.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <p>Esse projeto tem como finalidade cadastrar jogadores, técnicos e gandulas. 
+        Além disso, conta com as funcionalidades de Consultar, Editar e Deletar</p>
+
+        <h6>JOGADOR:</h6>
+        <div>
+            <center>
+                <a href="~/Jogador/addJogador" class="btn btn-success">Incluir Jogador</a>
+                <a href="~/Jogador/getAllJogadorDetails" class="btn btn-info">Consultar</a>
+            </center>
+        </div>
+
+        <h6>TÉCNICO:</h6>
+        <div>
+            <center>
+            <a href="~/Tecnico/addTecnico" class="btn btn-success">Incluir Técnico</a>
+            <a href="~/Tecnico/getAllTecnicoDetails" class="btn btn-info">Consultar</a>
+            </center>
+        </div>
+
+        <h6>GANDULA:</h6>
+        <div>
+            <center>
+            <a href="~/Gandula/addGandula" class="btn btn-success">Incluir Gandula</a>
+            <a href="~/Gandula/getAllGandulasDetails" class="btn btn-info">Consultar</a>
+            </center>
+        </div>
+
+    </body>
+</DOCTYPE>
+

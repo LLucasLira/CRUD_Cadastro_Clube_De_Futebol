@@ -1,0 +1,76 @@
+﻿@using CADASTRO_DE_CLUBE_DE_FUTEBOL.Controllers;
+<DOCTYPE html>
+    <head>
+        <title>Detalhe de Gandula</title>
+    </head>
+    <body>
+
+        <h2>Detalhe de Gandula</h2>
+
+        <table class="table">
+            <tr>
+                <th></th>
+                <th scope="col">
+                    Id
+                </th>
+                <th scope="col">
+                    Jogos Trabalhados
+                </th>
+                <th scope="col">
+                    Jogos Vencidos
+                </th>
+                <th scope="col">
+                    Pé Quente ou Pé Frio
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Time
+                </th>
+                <th scope="col">
+                    Idade
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink("Deletar", "deleteGandula", new { id = item.Id })
+                        @Html.ActionLink("Alterar", "editaGandulaDetails", new { id = item.Id })
+                    </td>
+                    <td>
+                        @Html.Encode(item.Id)
+                    </td>
+                    <td>
+                        @Html.Encode(item.jogosTrabalhados)
+                    </td>
+                    <td>
+                        @Html.Encode(item.jogosVencidos)
+                    </td>
+                    <td>
+                        @Html.Encode(item.peQuenteFrio)
+                    </td>
+                    <td>
+                        @Html.Encode(item.nome)
+                    </td>
+                    <td>
+                        @Html.Encode(item.time)
+                    </td>
+                    <td>
+                        @Html.Encode(item.idade)
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div>
+            <a href="~/Home/Index" class="btn btn-danger">Voltar</a>
+        </div>
+
+    </body>
+</DOCTYPE>
+
+
+
+

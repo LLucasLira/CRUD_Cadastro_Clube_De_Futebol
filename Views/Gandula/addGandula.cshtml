@@ -1,0 +1,72 @@
+﻿@model CADASTRO_DE_CLUBE_DE_FUTEBOL.Models.clsGandula
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <DOCTYPE html>
+        <head>
+            <title>Formulário Gandula</title>
+        </head>
+        <body>
+
+            <h2>Formulário Gandula</h2>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="color:green">
+                    @ViewBag.Message
+                </div>
+            </div>
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.jogosTrabalhados, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(Model => Model.jogosTrabalhados, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.jogosTrabalhados, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.jogosVencidos, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(Model => Model.jogosVencidos, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.jogosVencidos, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.nome, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div>
+                    @Html.EditorFor(Model => Model.nome, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.nome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.time, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div>
+                    @Html.EditorFor(Model => Model.time, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.time, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.idade, htmlAttributes: new { @class = "control-label col-md-12" })
+                <div>
+                    @Html.EditorFor(Model => Model.idade, new { HtmlTextWriterAttribute = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(Model => Model.idade, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <a href="~/Home/Index" class="btn btn-danger">Voltar</a>
+                <input type="submit" class="btn btn-success" />
+            </div>
+
+        </body>
+    </DOCTYPE>
+}
+
