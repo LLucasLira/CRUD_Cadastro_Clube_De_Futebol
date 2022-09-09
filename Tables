@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[tGandula] (
+    [Id]               INT          IDENTITY (1, 1) NOT NULL,
+    [jogosTrabalhados] INT          NOT NULL,
+    [jogosVencidos]    INT          NOT NULL,
+    [peQuenteFrio]     VARCHAR (10) NOT NULL,
+    [nome]             VARCHAR (50) NOT NULL,
+    [time]             VARCHAR (50) NOT NULL,
+    [idade]            INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[tJogador] (
+    [Id]           INT          IDENTITY (1, 1) NOT NULL,
+    [posicao]      VARCHAR (25) NOT NULL,
+    [numeroCamisa] INT          NOT NULL,
+    [golsMarcados] INT          NOT NULL,
+    [nome]         VARCHAR (50) NOT NULL,
+    [time]         VARCHAR (50) NOT NULL,
+    [idade]        INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[tTecnico] (
+    [Id]         INT          IDENTITY (1, 1) NOT NULL,
+    [qtdTitulos] INT          NOT NULL,
+    [qtdTimes]   INT          NOT NULL,
+    [estrategia] VARCHAR (10) NOT NULL,
+    [nome]       VARCHAR (50) NOT NULL,
+    [time]       VARCHAR (50) NOT NULL,
+    [idade]      INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
